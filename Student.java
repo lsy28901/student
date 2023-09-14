@@ -1,15 +1,20 @@
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-
-// lombok ì ìš©
+// lombok Àû¿ë
+@AllArgsConstructor
+@Getter
+@Setter
 public class Student {
 	private String name;
 	private String department;
 	private String id;
 	private double grade;
 	
-	//ìƒì„±ì ì¶”ê°€
+	//»ı¼ºÀÚ Ãß°¡
 	
 	
 	
-	// getter/setter ì¶”ê°€
+	// getter/setter Ãß°¡
 }
