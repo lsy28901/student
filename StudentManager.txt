@@ -10,16 +10,22 @@ public class StudentManager {
 			System.out.print(">> ");
 			String text = scanner.nextLine();
 			StringTokenizer st = new StringTokenizer(text, ",");
-			
-			
+			Student student = new Student(st.nextToken(), st.nextToken()
+					, st.nextToken(), Double.parseDouble(st.nextToken()));
+			dept.add(student);
 			// ArrayList에 저장
 		}			
 	}
-	
+
 	private void printAll() { // 일부러 Iterator로 작성해 보았음
 		Iterator<Student> it = dept.iterator();
 		while (it.hasNext()) {
-			
+			Student st = (Student)it.next();
+			System.out.println("이름:"+st.getName());
+			System.out.println("학과:"+st.getDepartment());
+			System.out.println("학번:"+st.getId());
+			System.out.println("학점평균:"+st.getGrade());
+			System.out.println("------------------------------");
 			//학생 정보 출력
 		}		
 	}
@@ -32,18 +38,20 @@ public class StudentManager {
 				return; // 종료
 			
 			for(int i=0; i<dept.size(); i++) { // dept에 있는 모든 학생 검색
-				
-				
-				
+				if(dept.get(i).getName().equals(name)) {
+					String nam = dept.get(i).getName();
+					String dep = dept.get(i).getDepartment();
+					String id = dept.get(i).getId();
+					Double grade = dept.get(i).getGrade();
+					System.out.println(nam+", "+dep+", "+id+", "+grade);
+				}
 			} // end of while
 		}
 	}
-	
+
 	public void run() {
 		read();
 		printAll();
 		processQuery();
 	}
-	
-	
-}
+	}
